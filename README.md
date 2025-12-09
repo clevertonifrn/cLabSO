@@ -1,1 +1,1 @@
-Disciplina de Laboratório de Sistemas Operacionais.
+Disciplina de Laboratório de Sistemas Operacionais..
