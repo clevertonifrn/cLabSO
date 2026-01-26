@@ -60,7 +60,7 @@ clean:
 	$(d) rmi $(shell sudo docker images --filter=reference="$(bn)" -q)
 	
 cAuxF:
-	rm -rf ollama*
+	sudo rm -rf ollamaD ollama-*
 	
 bench:
 	$(d) run -it $(bn) openssl speed -seconds 30 -bytes 8129 -multi 4 sha256
