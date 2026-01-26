@@ -1,0 +1,39 @@
+# Ollama Docker
+
+Docker container for running Ollama locally with persistent model storage.
+
+## Quick Start
+# Build the Docker image
+make build
+
+# Download Ollama (if needed)
+make dlOllama
+
+# Start Ollama server (detached with volume)
+make runDS
+
+# Stop the server
+make stopDS
+
+# Open shell in container
+make sh
+
+# View container status
+make s
+
+# View logs
+make lAll
+
+## Usage
+# Pull and run a model
+ollama pull llama3.2
+ollama run llama3.2
+
+# API access at http://localhost:11434
+
+## Links
+- https://github.com/ollama/ollama
+- https://ollama.com/library
+- https://github.com/p-lemonish/ollama-x-opencode Example how config ollama with opencode.ai
+- https://github.com/anomalyco/opencode/issues/729
+- https://www.youtube.com/watch?v=oSRdjwtKI3E
