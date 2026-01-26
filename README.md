@@ -1,7 +1,7 @@
 # Disciplina de Laboratório de Sistemas Operacionais
 
 ## Visão Geral
-Este repositório contém materiais e infraestrutura para a disciplina de Laboratório de Sistemas Operacionais do IFRN. O projeto foca em containers Docker e ambientes virtualizados para ensino de SO.
+Este repositório contém materiais e infraestrutura para a disciplina de Laboratório de Sistemas Operacionais do IFRN.
 
 ## Estrutura da Disciplina
 
