@@ -15,6 +15,7 @@ Este repositório contém materiais e infraestrutura para a disciplina de Labora
 * **beowulf**: 3.0 (glibc 2.28) ~142.3MB
 * **chimaera**: 4.0 (glibc 2.31) ~148MB  
 * **daedalus**: 5.0 (glibc 2.36) ~35.73MB
+* **excalibur**: 6.0 (glibc 2.41) ~121MB
 
 #### Projeto AI com Ollama
 Container Docker para executar Ollama localmente com armazenamento persistente de modelos.
