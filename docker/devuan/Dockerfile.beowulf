@@ -7,11 +7,18 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN echo 'APT::Install-Recommends "false";\nAPT::Install-Suggests "false";' >> /etc/apt/apt.conf
 
+RUN printf '%s\n' \
+        'Acquire::http::No-Cache "true";' \
+        'Acquire::http::Max-Age "0";' \
+        'Acquire::https::No-Cache "true";' \
+        'Acquire::https::Max-Age "0";' \
+    >> /etc/apt/apt.conf
+    
 RUN echo "deb http://archive.devuan.org/merged beowulf main" > /etc/apt/sources.list && \
   echo "deb http://archive.devuan.org/merged beowulf-security main" >> /etc/apt/sources.list
 
-RUN apt -y update
-RUN apt -y install bash openssl curl
+RUN apt -y clean && update
+RUN apt -y install bash openssl curl procps
 RUN apt -y autoremove --purge
  
 RUN echo 'alias la="ls -lha --color"' >> ~/.bashrc \

@@ -1,12 +1,14 @@
 bn=devtest
 
-#beowulf  3.0 glibc 2.28 ~ 142.3MB
-#chimaera 4.0 glibc 2.31 ~ 148  MB
-#daedalus 5.0 glibc 2.36 ~ 35.73MB
+#beowulf   3.0 glibc 2.28 ~ 142.3MB
+#chimaera  4.0 glibc 2.31 ~ 148  MB
+#daedalus  5.0 glibc 2.36 ~ 35.73MB
+#excalibur 6.0 glibc 2.41 ~ 121MB
 
 #V=beowulf
-V=chimaera
-#V=daedalus
+#V=chimaera
+V=daedalus
+#V=excalibur
 
 def: bD 
 
@@ -26,6 +28,9 @@ bCH:
 bD:
 	sudo make build V=daedalus
 
+bE:
+	sudo make build V=excalibur
+	
 run:
 	sudo docker run -it $(bn) /bin/bash
 

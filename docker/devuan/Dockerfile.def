@@ -7,13 +7,19 @@ ENV TZ="America/Fortaleza"
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN echo 'APT::Install-Recommends "false";\nAPT::Install-Suggests "false";' >> /etc/apt/apt.conf
+RUN printf '%s\n' \
+        'Acquire::http::No-Cache "true";' \
+        'Acquire::http::Max-Age "0";' \
+        'Acquire::https::No-Cache "true";' \
+        'Acquire::https::Max-Age "0";' \
+    >> /etc/apt/apt.conf
 
 RUN echo "deb http://devuan.c3sl.ufpr.br/merged ${VER} main" > /etc/apt/sources.list \
  && echo "deb http://devuan.c3sl.ufpr.br/merged ${VER}-updates main" >> /etc/apt/sources.list \
  && echo "deb http://devuan.c3sl.ufpr.br/merged ${VER}-security main" >> /etc/apt/sources.list
 
-RUN apt -y update
-RUN apt -y install bash openssl curl
+RUN apt -y clean && apt -y update
+RUN apt -y install bash openssl curl ca-certificates procps
 RUN apt -y autoremove --purge
  
 RUN echo 'alias la="ls -lha --color"' >> ~/.bashrc \
